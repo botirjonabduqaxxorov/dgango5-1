@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ brand.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{{ brand.name }} ({{ brand.country }})</h1>
+    <h2>Cars</h2>
+    <ul>
+        {% for car in cars %}
+            <li>{{ car.model_name }} - ${{ car.price }} - {{ car.color }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>
